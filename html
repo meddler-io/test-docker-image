@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+
+  <!-- </head> -->
+</head>
+<body>
+
+</body>
+
+
+
+  <script>
+
+    let iframe = document.getElementById('iframe');
+    // TODO modify with your own partnerId
+    // beware to scope the id5Status variable or uniquely name it to avoid collisions
+    var id5Status = ID5.init({partnerId: 984 , provider: 'aps' , debugBypassConsent : true,  });
+    var id5Id = id5Status.getUserId();
+    
+    
+    (function() {
+      // TODO: modify with your own partnerId
+      // beware of scope of id5Status and myId5
+      var myId5;
+      var id5Status = ID5.init({partnerId: 984}).onAvailable(function(status) {;
+        // ... do something ...
+        myId5 = status.getUserId();
+        console.log('id5', myId5)
+      });
+    })();
+    
+    </script>
+
+
+</html>
